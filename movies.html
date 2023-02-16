@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MyFlixer 2.0</title>
+  <link rel="shortcut icon" href="./Images/Logo/Title.jpeg" type="image/x-icon">
+
+  <!-- Font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link href="./static/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <link rel="stylesheet" href="static/style-min.css">
+  <link rel="stylesheet" href="cards.css">
+
+</head>
+
+<!------------------------Scroll to top button------------------------------------------------>
+<style>
+
+
+
+    #scrollToTopButton{
+  position: fixed;
+  bottom: 40px;
+  right: 25px;
+  font-size: 25px;
+  z-index: 99;
+  width: 50px;
+  height: 50px;
+  background-color:red;
+  color:black;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 6px;
+  border-radius: 50%;
+  }
+  #scrollToTopButton:hover, i:hover {
+  background-color:white;
+  color:red;
+  }
+  #nav:hover
+{
+  background-color:#e60e23!important;
+
+}
+
+.nav-item :hover{
+  margin-bottom: 10px;
+  /* background-color: aquamarine; */
+  border-bottom: 3px;
+  border-color: red;
+  border-bottom-style: solid;
+}
+
+    .logo {
+  width: 110px;
+  height: 90px;
+  padding: 3px;
+  margin: 0;
+  padding: 0;
+}
+.fas:hover{background: none!important ;}
+.nav-item{ flex-wrap:wrap;}
+.menu li a:hover {
+  color: red !important;
+  opacity: 0.5;
+}
+.navbar-nav{
+  display: flex;
+  align-items: center;
+  padding: 0px 7.5px;
+}
+
+/* CSS FOR FOOTER */
+.footer{
+margin-bottom:15px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.footer-content{
+  display:flex;
+  justify-content:space-between;
+  padding: 10px 20px;
+}
+.footer-logo{
+  width: 150px;
+  height: 120px;
+  padding: 3px;
+  margin:0px 0px 0px 10px;
+  padding: 0;
+}
+.footer-heading{
+  color:white;
+}
+.footer-left, .footer-right, .footer-middle{
+text-align:center;
+}
+.icons{
+  margin-left:-30px;
+}
+.footer-links i{
+font-size:30px;
+width:40px;
+padding:5px;
+height:40px;
+margin-top:30px;
+}
+.footer-middle a i:hover{
+background-color:white;
+border-radius:50px;
+color:red;
+}
+.footer-middle-list-item{
+list-style:none;
+font-size:15px;
+font-family:cursive;
+margin:5px 0px 0px 15px;
+text-align:left;
+}
+.footer-middle-list-item a{
+text-decoration:none;
+color:white;
+}
+.footer-middle-list-item a:hover{
+color:red;
+}
+.footer-right{
+  margin-top:-15px;
+}
+.footer-contact-button{
+font-size:20px;
+background-color:red;
+color:black;
+padding:10px;
+border:none;
+border-radius:10px;
+text-decoration:none;
+}
+.footer-contact-button:hover{
+background-color:white;
+color:red;
+}
+.footer-bottom-tagline{
+color:white;
+font-size:15px;
+font-family:cursive;
+margin-bottom:25px;
+}
+
+
+.footer-copyright{
+text-align:center;
+color:white;
+margin-top:20px;
+font-size:18px;
+}
+.footer-hr{
+    color:grey;
+    font-weight:bold;
+}
+/* .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);} */
+
+/***************** Media Queries *********************/
+
+@media (max-width: 600px) {
+.footer-content{
+   display:block;
+   text-align:center;
+}
+.footer-middle-list-item{
+  text-align:center;
+  margin-left:-20px;
+}
+
+.footer-left, .footer-middle, .footer-right{
+  margin-top:50px;
+}
+}
+
+#waterdrop {
+  height: 30px;
+}
+
+#waterdrop canvas {
+  bottom: -70px !important;
+}
+#header-nav .nav-link {
+  color: white;
+  font-size: 20px;
+  margin-left: 20px;
+}
+    @media only screen and (max-width: 1400px){
+  #header-nav .nav-link {
+    color: white;
+    font-size: 18px;
+    margin-left: 18px;
+  }
+}
+
+@media only screen and (min-width: 1133px) and (max-width: 1275px) {
+  #header-nav .nav-link {
+    color: white;
+    font-size: 15px;
+    margin-left: 10px;
+  } 
+}
+@media only screen and (min-width: 1035px) and (max-width: 1132px) {
+  #header-nav .nav-link {
+    color: white;
+    font-size: 15px;
+    margin-left: 10px;
+  } 
+  #searchText{
+    width: 120px;
+  }
+  #submitBtn{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 993px) and (max-width: 1034px) {
+  #header-nav .nav-link {
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+  } 
+
+#searchText{
+  width: 100px;
+}
+#submitBtn{
+  width: 50px;
+  display: flex;
+  justify-content: center;
+}
+}
+@media only screen and (max-width: 531px) {
+  .poster {
+  margin: 50px auto !important;
+  width: 230px !important;
+}
+}
+
+.poster {
+  margin: 50px 20px;
+}
+</style>    
+
+
+</head>
+
+<body style="background-color:black;" color="height:auto;">
+
+
+    <div class="scroll-bar">
+    <!-- navbar starts -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark" id="header-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html"><img class="logo" src="Images/TheaterLogoFinal.png" alt="" width="30"
+            height="24"></a>
+        <button id="nav" class="navbar-toggler" id="nav" style="background-color:#8b0000" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="background-color:dark-grey;"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="movies.html">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="web-series.html">Web Series</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kids.html">Kids</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+            <li>
+              <!-- Genre dropdown starts-->
+              <div>
+                <div class="dropdown" style="position: relative; display: inline-block; padding-top: 5px; padding-left: 15px;">
+                    <button class="btn btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton" style="font-size:20px;">
+                        Genres
+                    </button>
+                    <div class="dropdown-content" style="color: white;">
+                        <a href="popular.html">Popular</a>
+                        <a href="crime.html">Crime</a>
+                        <a href="suspense.html">Suspense & Thriller</a>
+                        <a href="action.html">Action</a>
+                        <a href="fantasy.html">Sci-Fi & Fantasy</a>
+                        <a href="documentary.html">Documentary</a>
+                        <a href="horror.html">Horror</a>
+                        <a href="drama.html">Drama</a>
+                        <a href="war.html">War & Politics</a>
+                        <a href="comedy.html">Comedy</a>
+                        <a href="romance.html">Romance</a>
+                        <a href="anime.html">Anime</a>
+                      </div>
+                </div>
+              </div>
+              <!-- Genre dropdown ends-->
+            </li>
+            <div style="position: relative; display: inline-block; padding-top: 5px; padding-left: 15px;">
+              <li>
+                <button  type="button" class="btn btn-light" onclick="logout()">Logout</button>
+              </li>
+            </div>
+          </ul>
+          <form id="searchForm" class="d-flex">
+            <input class="form-control me-2" type="text" id="searchText" placeholder="Search" aria-label="Search">
+            <button class="btn btn-danger" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+      </nav>
+
+        <!-- navbar ends -->
+
+  
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/Parasite.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>Parasite</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2019</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h12m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.6</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">The struggling Kim family sees an opportunity when the son starts working for the wealthy Park family. Soon, all of them find a way to work within the same household and start living a parasitic life.</p>
+
+              
+     <button class="btn_i b4_i" onclick="openMovieWin9()">▶Play</button>
+                  
+                    <script type="text/javascript">
+                      function openMovieWin9(){
+                        window.open("https://myflixer.is/movie","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+                      }
+                    </script>
+
+        </div>
+      </div>
+      <div class="flim">
+        <b>Parasite</b><br>IMDb - 8.6
+      </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/We_re_the_Millers_poster.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>We're the Millers</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2013</button>
+            <button class="btn_i b2_i"  title="Seasons" style="color:white">1h58m</button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">7.0</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">David, a drug dealer, is forced by his boss to smuggle drugs from Mexico. He hires a stripper, a petty thief and a teenage neighbour and forms a fake family to help him smuggle the drugs.</p>
+
+ 
+          <button class="btn_i b4_i" onclick="openMovieWin9()">▶Play</button>
+                  
+          <script type="text/javascript">
+            function openMovieWin9(){
+              window.open("https://myflixer.is/movie","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+            }
+          </script>
+
+        </div>
+      </div>
+      <div class="flim">
+        <b>We're the Millers</b>
+        <br>
+        IMDb - 7.0
+      </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/the terminal.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>The Terminal</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2004</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h8m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">7.4</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">Viktor Navorski gets stranded at an airport when a war rages in his country. He is forced by the officials to stay at the airport until his original identity is confirmed.</p>
+
+           
+            
+            <button class="btn_i b4_i" onclick="openMovieWin4()">▶Play</button>
+
+            <script type="text/javascript">
+              function openMovieWin4(){
+                window.open("https://youtu.be/ozmOG2RxxFw","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+              }
+            </script>
+        </div>
+      </div>
+      <div class="flim">
+        <b>The Terminal</b>
+        <br>
+        IMDb - 7.4
+      </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/Matrix.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>The Matrix</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">1999</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h16m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.7</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">Thomas Anderson, a computer programmer, is led to fight an underground war against powerful computers who have constructed his entire reality with a system called the Matrix.</p>
+
+           
+             
+          <button class="btn_i b4_i" onclick="openMovieWin9()">▶Play</button>
+                  
+          <script type="text/javascript">
+            function openMovieWin9(){
+              window.open("https://myflixer.is/movie","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+            }
+          </script>
+
+        </div>
+      </div>
+      <div class="flim">
+        <b>The Matrix</b>
+        <br>
+        IMDb - 8.7
+       </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/joker.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>Joker</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2019</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h2m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.4</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">Arthur Fleck, a party clown, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of crime and chaos.</p>
+
+            
+          <button class="btn_i b4_i" onclick="openMovieWin9()">▶Play</button>
+                  
+          <script type="text/javascript">
+            function openMovieWin9(){
+              window.open("https://myflixer.is/movie","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+            }
+          </script>
+
+        </div>
+      </div>
+      <div class="flim">
+        <b>Joker</b><br>IMDb - 8.4
+      </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/Hamilton.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>Hamilton</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2020</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h40m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.4</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">Alexander Hamilton, an orphan, arrives in New York to work for George Washington. After the American Revolution, he goes on to become first Secretary of the Treasury of the US.</p>
+
+              
+          <button class="btn_i b4_i" onclick="openMovieWin9()">▶Play</button>
+                  
+          <script type="text/javascript">
+            function openMovieWin9(){
+              window.open("https://myflixer.is/movie","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+            }
+          </script>
+
+        </div>
+      </div>
+      <div class="flim">
+        <b>Hamilton</b>
+        <br>
+        IMDb - 8.4
+      </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/goodfellas.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>GoodFellas</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">1990</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h28m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.7</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">Young Henry Hill, with his friends Jimmy and Tommy, begins the climb from being a petty criminal to a gangster on the mean streets of New York.</p>
+
+          
+          <button class="btn_i b4_i" onclick="openMovieWin9()">▶Play</button>
+                  
+          <script type="text/javascript">
+            function openMovieWin9(){
+              window.open("https://myflixer.is/movie","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+            }
+          </script>
+
+        </div>
+      </div>
+      <div class="flim">
+        <b>GoodFellas</b>
+        <br>
+        IMDb - 8.7
+      </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/the shawshank.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1 style="font-size: 30px;">The Shawshank Redemption</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">1994</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h22m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">9.3</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i" style="margin-top: -20px;">Andy Dufresne, a successful banker, is arrested for the murders of his wife and her lover, and is sentenced to life imprisonment at the Shawshank prison. He becomes the most unconventional prisoner.</p>
+
+              
+            <button class="btn_i b4_i" onclick="openMovieWin9()">▶Play</button>
+            
+            <script type="text/javascript">
+              function openMovieWin9(){
+                window.open("https://youtu.be/MoLEo-HUGOk","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+              }
+            </script>
+        </div>
+      </div>
+      <div class="flim">
+        <b>The Shawshank Redemption</b>
+        <br>
+        IMDb - 9.3
+    </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/green mile.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>The Green Mile</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">1999</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">3h9m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.6</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">Paul, the head guard of a prison, meets an inmate, John, an African American who is accused of murdering two girls. His life changes drastically when he discovers that John has a special gift.</p>
+                
+            
+          <button class="btn_i b4_i" onclick="openMovieWin9()">▶Play</button>
+                  
+          <script type="text/javascript">
+            function openMovieWin9(){
+              window.open("https://myflixer.is/movie","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+            }
+          </script>
+
+        </div>
+      </div>
+      <div class="flim">
+        <b>The Green Mile</b>
+        <br>
+        IMDb - 8.6
+    </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/inter.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>Interstellar</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2014</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h55m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.6</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.</p>
+
+            
+            <button class="btn_i b4_i" onclick="openMovieWin11()">▶Play</button>
+            
+            <script type="text/javascript">
+              function openMovieWin11(){
+                window.open("https://youtu.be/It9-pm9JOSk","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+              }
+            </script>
+        </div>
+      </div>
+      <div class="flim">
+        <b>Interstellar</b>
+        <br>
+        IMDb - 8.6
+      </div>
+    </div>
+  </div> 
+</div>
+
+<div class="container" id="Movies">
+
+  <hr>
+   <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/aaa.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>Shake rattle and Roll 5</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">1994</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h41m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.1</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">Amar and Prem, who belong to middle-class families, compete to win over Raveena, a millionaire's daughter</p>
+
+            <button class="btn_i b4_i" onclick="openMovieWin121()">▶Play</button>
+            
+            <script type="text/javascript">
+              function openMovieWin121(){
+                window.open("https://www.youtube.com/watch?v=SkwJP2tszWY","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+              }
+            </script>
+        </div>
+      </div>
+      <div class="flim">
+        <b>Shake rattle and Roll 5</b>
+        <br>
+        IMDb - 8.1
+      </div>
+    </div>
+  </div>
+
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/friends.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>Enteng Kabisote 4</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2007</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">2h33m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.2</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">Enteng Kabisote 4: Okay Ka Fairy Ko...The Beginning of the Legend is a 2007 </p>
+
+           
+             
+              </script><br><br>
+              <button class="btn_i b4_i" onclick="openMovieWin12()">▶Play</button>
+              <script type="text/javascript">
+                function openMovieWin12(){
+                  window.open("https://www.youtube.com/watch?v=XjxJfv931eg&t=115s","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+                }
+              </script>
+
+        </div>
+      </div>
+      <div class="flim">
+        <b>Enteng Kabisote 4</b>
+        <br>
+        IMDb - 8.2
+      </div>
+    </div>
+</div> 
+
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/milkha.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1 style="font-size: 37px;">Enteng Kabisote 5</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2013</button>
+            <button class="btn_i b2_i"  title="Minutes" style="color:white">3h9m<button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.2</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i"></p>
+        
+        <button class="btn_i b4_i" onclick="openMovieWin161()">▶Play</button>
+        
+        <script type="text/javascript">
+            function openMovieWin161(){
+              window.open("https://www.youtube.com/watch?v=XjxJfv931eg&list=PLHGFF9ypw50bXzUzbp9ReoVQmE8lqYWC7&index=4","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+            }
+          </script>
+
+        </div>
+      </div>
+      <div class="flim">
+        <b>Enteng Kabisote 5</b>
+        <br>
+        IMDb - 8.2
+      </div>
+    </div>
+  </div> 
+
+  <div class="poster">
+      <div class="flip-card_i">
+        <div class="flip-card-inner_i">
+          <div class="flip-card-front_i">
+              <img src="./Images/wed.jpg" alt="Avatar" style="width:250px;height:360px;">
+          </div>
+          <div class="flip-card-back_i">
+            <h1>Enteng Kabisote 2</h1>
+              <button class="btn_i b3_i"  title="Year" style="color:white">2008</button>
+              <button class="btn_i b2_i"  title="Seasons" style="color:white">1h44m</button>
+              <button class="btn_i b1_i"  title="IMDb" style="color:white">8.1</button>
+            </span>
+            <br />
+            <br />
+          </p>
+
+            <p class="para_i"></p>
+
+          
+          <button class="btn_i b4_i" onclick="openMovieWin162()">▶Play</button>
+          <script type="text/javascript">
+              function openMovieWin162(){
+                window.open("https://www.youtube.com/watch?v=qVsnUiwSDeA&list=PLHGFF9ypw50bXzUzbp9ReoVQmE8lqYWC7&index=2","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+              }
+            </script>
+          </div>
+        </div>
+        <div class="flim">
+          <b>Enteng Kabisote 2</b>
+          <br>
+          IMDb - 8.1
+        </div>
+      </div>
+    </div> 
+
+     <div class="poster">
+      <div class="flip-card_i">
+        <div class="flip-card-inner_i">
+          <div class="flip-card-front_i">
+              <img src="./Images/dhoni.jpg" alt="Avatar" style="width:250px;height:360px;">
+          </div>
+          <div class="flip-card-back_i">
+            <h1>Enteng Kabisote 3</h1>
+              <button class="btn_i b3_i"  title="Year" style="color:white">2016</button>
+              <button class="btn_i b2_i"  title="Seasons" style="color:white">3h40m</button>
+              <button class="btn_i b1_i"  title="IMDb" style="color:white">7.9</button>
+            </span>
+            <br />
+            <br />
+          </p>
+
+            <p class="para_i">WATCH Enteng Kabisote 3</p>
+              <button class="btn_i b4_i" onclick="openMovieWin16()">▶Play</button>
+              
+              <script type="text/javascript">
+                  function openMovieWin16(){
+                    window.open("https://www.youtube.com/watch?v=oCfOWXrV-E8","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+                  }
+                </script>
+          </div>
+        </div>
+        <div class="flim">
+          <b>Enteng Kabisote 3</b>
+          <br>
+          IMDb - 7.9
+        </div>
+      </div>
+    </div> 
+
+     <div class="poster">
+        <div class="flip-card_i">
+          <div class="flip-card-inner_i">
+            <div class="flip-card-front_i">
+                <img src="./Images/drishyam.jpg" alt="Avatar" style="width:250px;height:360px;">
+            </div>
+            <div class="flip-card-back_i">
+              <h1>Si Enteng Si Agimat At Si Ako</h1>
+                <button class="btn_i b3_i"  title="Year" style="color:white">2015</button>
+                <button class="btn_i b2_i"  title="Seasons" style="color:white">2h43m</button>
+                <button class="btn_i b1_i"  title="IMDb" style="color:white">8.2</button>
+              </span>
+              <br />
+              <br />
+            </p>
+
+              <p class="para_i"></p>
+
+    
+                <button class="btn_i b4_i" onclick="openMovieWin17()">▶Play</button>
+                
+                <script type="text/javascript">
+                  function openMovieWin17(){
+                    window.open("https://www.youtube.com/watch?v=gkviQGryMQQ","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+                  }
+                </script>
+            </div>
+          </div>
+          <div class="flim">
+            <b>Si Enteng Si Agimat At Si Ako</b>
+            <br>
+            IMDb - 8.2
+          </div>
+        </div>
+      </div>
+
+
+       <div class="poster">
+        <div class="flip-card_i">
+          <div class="flip-card-inner_i">
+            <div class="flip-card-front_i">
+                <img src="./Images/dil.jpg" alt="Avatar" style="width:250px;height:360px;">
+            </div>
+            <div class="flip-card-back_i">
+              <h1>Enteng ng ina mo</h1>
+                <button class="btn_i b3_i"  title="Year" style="color:white">1995</button>
+                <button class="btn_i b2_i"  title="Seasons" style="color:white">3h12m</button>
+                <button class="btn_i b1_i"  title="IMDb" style="color:white">8.1</button>
+              </span>
+              <br />
+              <br />
+            </p>
+
+              <p class="para_i">WATCH ENTENG NG INA MO FREE</p>
+
+          
+                <button class="btn_i b4_i" onclick="openMovieWin18()">▶Play</button>
+                
+                <script type="text/javascript">
+                  function openMovieWin18(){
+                    window.open("https://www.youtube.com/watch?v=TBvan4Nu_dA","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+                  }
+                </script>
+            </div>
+          </div>
+          <div class="flim">
+            <b>ENTENG NG INA MO</b>
+            <br>
+            IMDb - 8.1
+          </div>
+        </div>
+      </div>
+
+
+      <div class="poster">
+        <div class="flip-card_i">
+          <div class="flip-card-inner_i">
+            <div class="flip-card-front_i">
+                <img src="./Images/gangs of wassepur.jpg" alt="Avatar" style="width:250px;height:360px;">
+            </div>
+            <div class="flip-card-back_i">
+              <h1>Home Along Da Riles</h1>
+                <button class="btn_i b3_i"  title="Year" style="color:white">2012</button>
+                <button class="btn_i b2_i"  title="Seasons" style="color:white">2h40m</button>
+                <button class="btn_i b1_i"  title="IMDb" style="color:white">8.2</button>
+              </span>
+              <br />
+              <br />
+            </p>
+
+              <p class="para_i"></p>
+
+            
+                <button class="btn_i b4_i" onclick="openMovieWin19()">▶Play</button>
+                
+                <script type="text/javascript">
+                  function openMovieWin19(){
+                    window.open("https://www.youtube.com/watch?v=ElrXkriPkrA","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+                  }
+                </script>
+            </div>
+          </div>
+          <div class="flim">
+            <b>Home Along Da Riles</b>
+            <br>
+            IMDb - 8.2
+          </div>
+        </div>
+      </div>
+
+
+
+  <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/sholay.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>Ang Dalubhasa</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">1975</button>
+            <button class="btn_i b2_i"  title="Seasons" style="color:white">3h24m</button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.2</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i"></p>
+
+            
+            <button class="btn_i b4_i" onclick="openMovieWin20()">▶Play</button>
+            
+            <script type="text/javascript">
+              function openMovieWin20(){
+                window.open("https://www.youtube.com/watch?v=CZOh8yvC-Ig","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+              }
+            </script>
+        </div>
+      </div>
+      <div class="flim">
+        <b>Ang Dalubhasa</b>
+        <br>
+        IMDb - 8.2
+      </div>
+    </div>
+  </div>
+
+
+   <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/rdb.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>Ang Padrino</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2006</button>
+            <button class="btn_i b2_i"  title="Seasons" style="color:white">2h51m</button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.1</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i"></p>
+
+            
+            <button class="btn_i b4_i" onclick="openMovieWin21()">▶Play</button>
+        
+            <script type="text/javascript">
+              function openMovieWin21(){
+                window.open("https://www.youtube.com/watch?v=o603DEy_5wY","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+              }
+            </script>
+        </div>
+      </div>
+      <div class="flim">
+        <b>Ang Padrino</b>
+        <br>
+        IMDb - 8.1
+      </div>
+    </div>
+  </div> 
+
+
+
+   <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/mbbs.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>Batang MATADERO</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2003</button>
+            <button class="btn_i b2_i"  title="Seasons" style="color:white">2h36m</button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.1</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i"></p>
+
+             
+            <button class="btn_i b4_i" onclick="openMovieWin22()">▶Play</button>
+            
+            <script type="text/javascript">
+              function openMovieWin22(){
+                window.open("https://www.youtube.com/watch?v=pWBNgLpUd8o","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+              }
+            </script>
+        </div>
+      </div>
+      <div class="flim">
+        <b>Batang MATADERO</b>      
+        <br>
+        IMDb - 8.1
+      </div>
+    </div>
+  </div>
+
+
+
+
+   <div class="poster">
+    <div class="flip-card_i">
+      <div class="flip-card-inner_i">
+        <div class="flip-card-front_i">
+            <img src="./Images/kgf.jpg" alt="Avatar" style="width:250px;height:360px;">
+        </div>
+        <div class="flip-card-back_i">
+          <h1>KGF</h1>
+            <button class="btn_i b3_i"  title="Year" style="color:white">2018</button>
+            <button class="btn_i b2_i"  title="Seasons" style="color:white">2h50m</button>
+            <button class="btn_i b1_i"  title="IMDb" style="color:white">8.3</button>
+          </span>
+          <br />
+          <br />
+        </p>
+
+          <p class="para_i">Rocky, a young man, seeks power and wealth in order to fulfil a promise to his dying mother</p>
+
+       
+            <button class="btn_i b4_i" onclick="openMovieWin23()">▶Play</button>
+            
+            <script type="text/javascript">
+              function openMovieWin23(){
+                window.open("https://youtu.be/ULEQb_l-N08","_blank","top=100,left=250,height=400,width=600,channelmode=yes,fullscreen=yes,menubar=no,toolbar=no,location=no,status=no,scrollbars=no,noopener=no");
+              }
+            </script>
+        </div>
+      </div>
+      <div class="flim">
+        <b>KGF</b>
+        <br>
+        IMDb - 8.3
+      </div>
+    </div>
+  </div> 
+
+
+</div>
+    <!-------------------------------Footer-------------------------------->
+    <footer class="footer">
+      <hr class="footer-hr">
+      <div class="footer-content">
+        <div class="footer-left">
+          <a href="home.html"><img class="footer-logo" src="Images/TheaterLogoFinal.png" alt="" width="30"
+              height="24"></a>
+          <p class="footer-bottom-tagline">Watch! Chill! Repeat!</p>
+        </div>
+        <div class="footer-middle">
+          <h2 class="footer-heading">Follow Us</h2>
+          <ul class="footer-middle-list icons">
+            <a class="footer-links" href="https://www.facebook.com/" target="_blank"><i
+                class="fab fa-facebook-f facebook" style="color:red"></i></a>
+            <a class="footer-links" href="https://twitter.com/login?lang=en" target="_blank"><i
+                class="fab fa-twitter twitter" style="color:red"></i></a>
+            <a class="footer-links" href="https://www.linkedin.com/login" target="_blank"><i
+                class="fab fa-linkedin linkedin" style="color:red"></i></a>
+            <a class="footer-links" href="https://www.instagram.com/" target="_blank"><i
+                class="fab fa-instagram instagram" style="color:red"></i></a>
+            <a class="footer-links" href="https://github.com/QAZIMAAZARSHAD/Movie-Streaming-Website" target="_blank"><i
+                class="fab fa-github github" style="color:red"></i></a>
+          </ul>
+        </div>
+        <div class="footer-middle">
+          <h2 class="footer-heading">Services</h2>
+          <ul class="footer-middle-list">
+            <li class="footer-middle-list-item"><a href="home.html">Enjoy Latest Movies</a> </li>
+            <li class="footer-middle-list-item"><a href="web-series.html">Watch Web-Series</a> </li>
+            <li class="footer-middle-list-item"><a href="kids.html">Everything for Kids</a> </li>
+            <li class="footer-middle-list-item"><a href="news.html">Coming soon</a> </li>
+            <li class="footer-middle-list-item"><a href="premium.html">Get Premium Subscription</a> </li>
+            <li class="footer-middle-list-item"><a href="faq.html">FAQ</a> </li>
+          </ul>
+        </div>
+  
+        <div class="footer-right">
+          <p class="footer-links">
+          <h2 class="footer-heading">Contact Us</h2>
+          <p class="footer-bottom-tagline">Feel free to contact us.</p>
+          <a class="footer-contact-button" href="contactus.html">Contact</a>
+          </p>
+        </div>
+      </div>
+      <hr class="footer-hr">
+      <div class="footer-copyright">
+        <p>Copyright &copy; and &reg; Since
+          <script>
+            document.write(new Date().getFullYear())
+          </script> Under ApnaTheatre.com : (Project Is Done By Archie Nuarin)
+        </p>
+      </div>
+    </footer>
+
+    <!----------------------scroll back to top button-->
+    <button id="scrollToTopButton" title="Go to top" class="ml-5">
+      <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+    </button>
+    <script>
+      $(document).ready(function () {
+        var scrollTopButton = document.getElementById("scrollToTopButton");
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollTopButton.style.display = "block";
+          } else {
+            scrollTopButton.style.display = "none";
+          }
+        }
+
+        $("#scrollToTopButton").click(function () {
+          $('html ,body').animate({ scrollTop: 0 }, 800)
+        });
+      });
+    </script>
+<script>
+  function logout(){
+    window.location.replace("login.html");
+  }
+  </script>
+    <!-- footer scripts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main-min.js"></script>
+
+    <script>
+      jQuery('#waterdrop').raindrops({
+        color: '#292c2f',
+        canvasHeight: 150,
+        density: 0.1,
+        frequency: 20
+      });
+    </script>
+    <!-- bootsstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"></script>
+    <script src="./static/script.js"></script>
+</body>
+</html>
